@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "gifty-ui"
+  "defaultProject": "gifty-ui",
+  "cli": {
+    "analytics": "e19d97ea-ccee-436a-96fa-8256d824d12f"
+  }
 }
