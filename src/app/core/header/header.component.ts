@@ -4,7 +4,8 @@ import { debounceTime } from 'rxjs/operators';
 
 import { faUser, faCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { AppService } from 'src/app/app.service';
+import { AlbumsService } from 'src/app/albums/albums.service';
+
 
 @Component({
     selector: 'gft-header',
@@ -13,12 +14,12 @@ import { AppService } from 'src/app/app.service';
 })
 export class HeaderComponent implements OnInit {
     public search = new FormControl('');
-    public albums$ = this.appService.getInitialSearchAlbums();
+    public albums$ = this.albumsService.getInitialSearchAlbums();
 
     public faUser = faUser;
     public faCircle = faCircle;
 
-    constructor(private readonly appService: AppService) { }
+    constructor(private readonly albumsService: AlbumsService) { }
 
     ngOnInit(): void {
         this.search.valueChanges
@@ -26,7 +27,7 @@ export class HeaderComponent implements OnInit {
             debounceTime(500)
         )
         .subscribe((searchExp: string) => {
-            this.albums$ = this.appService.searchAlbum(searchExp);
+            this.albums$ = this.albumsService.searchAlbum(searchExp);
         });
     }
 

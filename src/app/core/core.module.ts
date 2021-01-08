@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { AlbumsModule } from '../albums/albums.module';
 import { HeaderComponent } from './header/header.component';
 
 
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AlbumsModule
   ],
   exports: [HeaderComponent]
 })

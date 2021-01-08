@@ -1,4 +1,3 @@
-import { AppService } from './app.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,8 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    public albums$ = this.appService.getAlbums();
 
-    constructor(private readonly appService: AppService) { }
+    constructor() {}
 
 }

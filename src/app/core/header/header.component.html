@@ -5,8 +5,7 @@
         </div>
         <div class="content">
             <div class="search">
-                <input type="text" placeholder="Search" [formControl]="search"
-                (focus)="onFocus()" (blur)="onBlur()" />
+                <input type="text" placeholder="Search" [formControl]="search" (focus)="onFocus()" (blur)="onBlur()" />
             </div>
             <div class="account">
                 <!-- <fa-icon [icon]="faUser"></fa-icon> -->
@@ -14,15 +13,9 @@
                     <!-- <fa-icon [icon]="faCircle" stackItemSize="2x"></fa-icon> -->
                     <fa-icon [icon]="faCircle" stackItemSize="2x"></fa-icon>
                     <fa-icon [icon]="faUser" stackItemSize="1x" [inverse]="true"></fa-icon>
-                  </fa-stack>
+                </fa-stack>
             </div>
         </div>
     </div>
+    <gft-album-list [albums]="albums$ | async" [isDark]="true"></gft-album-list>
 </header>
-<div class="search-result">
-    <div *ngFor="let album of albums$ | async" class="card">
-        <img [src]="album.coverImage" [alt]="album.name">
-        <h2>{{ album.name }}</h2>
-        <h3>{{ album.artist }}</h3>
-      </div>
-</div>
